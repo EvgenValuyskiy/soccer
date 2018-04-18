@@ -1,0 +1,18 @@
+<h2>Команды</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let team of teams" (click)="onSelect(team)">
+        <span>{{team.id}}</span> {{team.name}}
+    </li>
+</ul>
+
+<div *ngIf="selectedTeam">
+
+    <h2>{{ selectedTeam.name | uppercase }} Подробнее</h2>
+    <div><span>id: </span>{{selectedTeam.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="selectedTeam.name" placeholder="name">
+        </label>
+    </div>
+
+</div>
